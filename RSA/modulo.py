@@ -12,7 +12,7 @@ def find_modular_inverse(number, module, with_manual=False):
         y = y0 - y1 * q
 
         if with_manual:
-            print(str(module).rjust(4), str(number).rjust(4), str(r).rjust(4), str(q).rjust(4), str(y0).rjust(4),str(y1).rjust(4),str(y).rjust(4))
+            print(str(module).ljust(12), str(number).ljust(12), str(r).ljust(12), str(q).ljust(12), str(y0).ljust(18),str(y1).ljust(18),str(y).ljust(18))
 
         y0 = y1
         y1 = y
@@ -33,7 +33,7 @@ def find_modular_exponentiation(base, exponent, module, with_manual=False):
             d = (d * base) % module
 
         if with_manual:
-            print(str(base).rjust(8), str(exponent).rjust(8), str(d).rjust(8))
+            print(str(base).ljust(18), str(exponent).ljust(18), str(d).ljust(18))
         
         exponent = exponent // 2
         base = (base * base) % module
@@ -42,4 +42,4 @@ def find_modular_exponentiation(base, exponent, module, with_manual=False):
 
 
 if __name__ == "__main__":
-    find_modular_inverse(30, 101, True)
+    print(find_modular_inverse(202005091905, 1073807359, True))
